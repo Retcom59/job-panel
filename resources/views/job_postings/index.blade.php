@@ -10,6 +10,7 @@
 
         <div class="d-flex justify-content-between align-items-center mb-3">
             <a href="{{ route('job-postings.create') }}" class="btn btn-primary">Yeni İlan Ekle</a>
+            
 
             <!-- Yayında mı? filtresi -->
             <form method="GET" class="d-flex align-items-center">
@@ -51,6 +52,8 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('job-postings.trash') }}" class="btn btn-danger mb-3">Çöp Kutusu</a>
+
     </div>
 </body>
 </html>

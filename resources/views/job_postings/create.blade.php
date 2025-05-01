@@ -25,25 +25,39 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Başlık</label>
-                <input type="text" id="title" name="title" class="form-control" value="{{ old('title') }}" required>
+                <input type="text" id="title" name="title" class="form-control @error('title') is-invalid @enderror"
+                       value="{{ old('title') }}">
+                @error('title')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Açıklama</label>
-                <textarea id="description" name="description" class="form-control" rows="4" required>{{ old('description') }}</textarea>
+                <textarea id="description" name="description"
+                          class="form-control @error('description') is-invalid @enderror"
+                          rows="4">{{ old('description') }}</textarea>
+                @error('description')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="mb-3">
                 <label for="location" class="form-label">Lokasyon</label>
-                <input type="text" id="location" name="location" class="form-control" value="{{ old('location') }}" required>
+                <input type="text" id="location" name="location"
+                       class="form-control @error('location') is-invalid @enderror"
+                       value="{{ old('location') }}">
+                @error('location')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
           
             <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" id="is_active" name="is_active" value="1" {{ old('is_active', true) ? 'checked' : '' }}>
+                <input class="form-check-input" type="checkbox" id="is_active" name="is_active"
+                       value="1" {{ old('is_active', true) ? 'checked' : '' }}>
                 <label class="form-check-label" for="is_active">
-                Yayında mı?
+                    Yayında mı?
                 </label>
-                </div>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Kaydet</button>

@@ -14,7 +14,7 @@ Route::prefix('job-postings')->group(function () {
     
     // index()
     Route::get('/', [JobPostingController::class, 'index'])->name('job-postings.index');
-    
+   
     // create()
     Route::get('/create', [JobPostingController::class, 'create'])->name('job-postings.create');
     
@@ -29,4 +29,9 @@ Route::prefix('job-postings')->group(function () {
     
     // destroy()
     Route::delete('/{jobPosting}', [JobPostingController::class, 'destroy'])->name('job-postings.destroy');
+
+    //soft-delete:
+    Route::get('/trash', [JobPostingController::class, 'trash'])->name('job-postings.trash');
+    Route::patch('/{jobPosting}/restore', [JobPostingController::class, 'restore'])->name('job-postings.restore');
+    Route::delete('/{jobPosting}/force-delete', [JobPostingController::class, 'forceDelete'])->name('job-postings.forceDelete');
 });
