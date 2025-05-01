@@ -1,6 +1,111 @@
 # job-panel
 
-A Laravel-based job posting management panel with CRUD functionality.
+This project is a job posting management panel built with Laravel. Users can create, edit, delete, and search job postings.
+
+## Table of Contents
+
+- [Laravel and PHP Version Info](#laravel-and-php-version-info)
+- [Installation Instructions](#installation-instructions)
+- [Database Setup and Migrations](#database-setup-and-migrations)
+- [Project Structure](#project-structure)
+
+
+## Laravel and PHP Version Info
+
+- **Laravel Version**: 9.x
+- **PHP Version**: 8.0 or higher
+- **Database**: MySQL (Other databases can be configured)
+
+
+## Installation Instructions
+
+1. **Clone the Repository**:
+
+Clone the repository to your local machine:
+ ```bash
+   git clone https://github.com/Retcom59/job-panel.git
+   cd job-panel
+ ```
+
+2. **Install Dependencies**:
+
+Use Composer to install the PHP dependencies:
+
+```bash
+    composer install
+```
+
+
+Configure .env File:
+
+```bash
+ cp .env.example .env
+```
+
+
+Open the .env file and set up your database credentials:
+
+```bash
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=job_panel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Generate Application Key:
+
+```bash
+php artisan key:generate
+php artisan serve
+```
+
+3. **Database Setup and Migrations**:
+
+Run Migrations:
+```bash
+php artisan migrate
+```
+
+Start the development server:
+```bash
+php artisan serve
+```
+
+4. **Project Structure**
+
+```bash
+job-panel/
+├── app/              # Application logic
+│   ├── Models/       # Eloquent models
+│   └── Http/         # Controllers and API routes
+├── database/         # Migrations and seeders
+├── public/           # Web server root (CSS, JS, images)
+├── resources/        # Blade views, language files
+├── routes/           # Routes (web.php, api.php)
+├── storage/          # Cache, logs, file uploads
+├── tests/            # Tests
+└── .env              # Environment configuration
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
